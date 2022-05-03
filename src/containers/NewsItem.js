@@ -26,12 +26,14 @@ const NewsItem = ({ article }) => {
   }
 
   var news = article;
+  console.log("print data...")
   console.log(news);
-  //if (news == null) {
-  //  return <div></div>;
-  //}
+  if (news.news == null) {
+    return <div></div>;
+  }
   return(<div>
-     <h1>{news.error}</h1>
+     <h1>{news.news.title}</h1>
+     <p><img src={news.news.urlToImage}></img></p>
     </div>
   );
 };

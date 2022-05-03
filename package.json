@@ -1,10 +1,11 @@
 {
-  "name": "sagaTut",
+  "name": "react-redux-saga",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --env APP_TARGET=VERSION_RUM --env appmode='GENERAL'",
+    "start-general": "webpack-dev-server --mode development --env VERSION_NORMAL --env GENERAL",
+    "start-protected": "webpack-dev-server --mode development --env VERSION_RUM --env PROTECTED",
     "dev": "webpack --mode development",
     "build-general": "webpack --mode production --env VERSION_NORMAL --env GENERAL",
     "build-protected": "webpack --mode production --env VERSION_RUM --env PROTECTED"

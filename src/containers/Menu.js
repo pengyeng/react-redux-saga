@@ -5,25 +5,15 @@ import {
     HashRouter,
   } from "react-router-dom";
 import Home from "./Home";
-import {NewsLink} from './menulink-APP_MODE';
+import {NewsMenuItem, NewsLink} from './menulink-APP_MODE';
 
 const Weather = React.lazy(() => import('./Weather'));
 
-const APP_MODE = "PROTECTED";
-var MyRoute = Route;
-
-function NewsMenuItem() {
-  if (APP_MODE == "GENERAL") {
-    return <li></li>;
-  }else{
-    return <li><NavLink to="/news">News</NavLink></li>;
-  }
-}
 function HomeLink(){
-  return <MyRoute path="/home" component={Home}/>;
+  return <Route path="/home" component={Home}/>;
 }
 function WeatherLink(){
-  return <MyRoute path="/weather" component={Weather}/>;
+  return <Route path="/weather" component={Weather}/>;
 }
 
 class Menu extends React.Component {
