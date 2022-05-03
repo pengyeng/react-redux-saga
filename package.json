@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --env APP_TARGET=VERSION_RUM --env appmode='GENERAL'",
     "dev": "webpack --mode development",
-    "build": "webpack --mode production --env VERSION_RUM --env GENERAL"
+    "build-general": "webpack --mode production --env VERSION_NORMAL --env GENERAL",
+    "build-protected": "webpack --mode production --env VERSION_RUM --env PROTECTED"
   },
   "keywords": [],
   "author": "",
