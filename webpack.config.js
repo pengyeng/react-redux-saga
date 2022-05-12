@@ -7,8 +7,7 @@ module.exports = env => {
   
   var appTarget = process.argv[5] || 'VERSION_NORMAL';
   var appMode = process.argv[7] || 'GENERAL';
-  //var appTarget = 'VERSION_NORMAL';
-  //var appMode = 'PROTECTED';
+
   if (process.argv[5] == 'VERSION_RUM'){
     console.log("including apm.init()...");
   }
