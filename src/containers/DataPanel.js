@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { DataGrid, GridRowsProp, GridColDef,GridToolbarContainer, GridToolbarExport } from '@mui/x-data-grid';
+import { DataGrid, GridColDef,GridToolbarContainer, GridToolbarExport } from '@mui/x-data-grid';
 import { connect } from 'react-redux'
 import {  getCarListing } from '../modules/data/dataAction'
  
@@ -19,7 +19,7 @@ function CustomToolbar() {
 }
 
 class DataPanel extends React.Component {
-    
+  
     componentDidMount() {
       this.props.getCarListing();
     };
@@ -33,9 +33,14 @@ class DataPanel extends React.Component {
       if (this.props.carData == null){
         return(<div></div>);
       }
+      if (this.props.carData.cars == null){
+        console.log(this.props.carData);
+        return(<div></div>);
+      } 
+  
       return (
         <div style={{ height: 500, width: '100%' }}>
-        <DataGrid rows={this.props.carData.cars} columns={columns} components={{Toolbar: CustomToolbar,}} />
+        <DataGrid rows={this.props.carData.cars} columns={columns}  components={{Toolbar: CustomToolbar,}} />
       </div>);
     };
 
