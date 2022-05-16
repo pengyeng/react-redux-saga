@@ -81,6 +81,7 @@ export default function ButtonAppBar() {
         <MenuItem component={NavLink} to="/weather" >Weather</MenuItem>
         <MenuItem component={NavLink} to="/datagrid" >Data Grid</MenuItem>
         <MenuItem component={NavLink} to="/datatable">Data Table</MenuItem>
+        <NewsMenuItem/>
       </Menu>
       <React.Suspense fallback={<div>loading...</div>}> 
       <HomeLink/>
