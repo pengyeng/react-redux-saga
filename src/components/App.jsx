@@ -1,10 +1,10 @@
 import React from 'react';
-import Menu from '../containers/Menu'
+//import Menu from '../containers/Menu'
+import ButtonAppBar from '../containers/AppBar'
 
 let App = () => (
   <div>
-    <Menu />
-
+    <ButtonAppBar/>
   </div>
 );
 
