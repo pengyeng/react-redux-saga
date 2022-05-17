@@ -13,10 +13,11 @@ import {
     NavLink,
     HashRouter,
   } from "react-router-dom";
-  import Home from "./Home";
-  import {NewsMenuItem, NewsLink} from './menulink-APP_MODE';
+
+import Home from "./Home";
+import {NewsMenuItem, NewsLink} from '../configurations/menulink-APP_MODE';
   const Weather = React.lazy(() => import('./Weather'));
-  const Data = React.lazy(() => import('./Data'));
+  const DataGrid = React.lazy(() => import('./DataGrid'));
   const DataTable = React.lazy(() => import('./DataTable'));
 
 function HomeLink(){
@@ -25,8 +26,8 @@ function HomeLink(){
   function WeatherLink(){
     return <Route path="/weather" component={Weather}/>;
   }
-  function DataLink(){
-    return <Route path="/datagrid" component={Data}/>;
+  function DataGridLink(){
+    return <Route path="/datagrid" component={DataGrid}/>;
   }
   function DataTableLink(){
     return <Route path="/datatable" component={DataTable}/>;
@@ -86,7 +87,7 @@ export default function ButtonAppBar() {
       <React.Suspense fallback={<div>loading...</div>}> 
       <HomeLink/>
       <WeatherLink/>
-      <DataLink/>
+      <DataGridLink/>
       <DataTableLink/>
       <NewsLink/>
       </React.Suspense>  

@@ -18,7 +18,7 @@ function CustomToolbar() {
     );
 }
 
-class DataPanel extends React.Component {
+class DataGridPanel extends React.Component {
   
     componentDidMount() {
       this.props.getCarListing();
@@ -54,9 +54,9 @@ const mapStateToProps = (state) => ({
   carData: state.data,
 })
 
-DataPanel = connect(
+DataGridPanel = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(DataPanel);
+)(DataGridPanel);
 
-export default DataPanel;
+export default DataGridPanel;

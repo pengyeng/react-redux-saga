@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import MenuItem from '@material-ui/core/MenuItem';
 
-const News = React.lazy(() => import('./News'));
+const News = React.lazy(() => import('../containers/News'));
 
 export function NewsMenuItem() {
     return <MenuItem component={NavLink} to="/news">News</MenuItem>;    
