@@ -20,8 +20,8 @@ const options = {
         );
     },
 };
-   
-class DataPanel extends React.Component {
+
+class DataTablePanel extends React.Component {
   
     componentDidMount() {
       this.props.getCarListing();
@@ -61,9 +61,9 @@ const mapStateToProps = (state) => ({
   carData: state.data,
 })
 
-DataPanel = connect(
+DataTablePanel = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(DataPanel);
+)(DataTablePanel);
 
-export default DataPanel;
+export default DataTablePanel;
