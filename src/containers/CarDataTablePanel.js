@@ -2,26 +2,22 @@ import React, { Component } from "react";
 import MUIDataTable from "mui-datatables";
 import { connect } from 'react-redux'
 import {  getCarListing } from '../modules/data/dataAction'
-import CustomToolbar from "./CustomToolbar";
+import CarDataToolbar from "./CarDataToolbar";
 
-const columns = ["Name", "Company", "City", "State"];
-const data = [
-    ["Joe James", "Test Corp", "Yonkers", "NY"],
-    ["John Walsh", "Test Corp", "Hartford", "CT"],
-    ["Bob Herm", "Test Corp", "Tampa", "FL"],
-    ["James Houston", "Test Corp", "Dallas", "TX"],
-   ];
+const myColumns = ["Manufacturer", "Model", "Year", "Price"];
+const title = "Car List";   
    
 const options = {
-
+    rowPerPage: 2,
+    rowPerPageOption: [2],
     customToolbar: () => {
         return (
-          <CustomToolbar />
+          <CarDataToolbar />
         );
     },
 };
 
-class DataTablePanel extends React.Component {
+class CarDataTablePanel extends React.Component {
   
     componentDidMount() {
       this.props.getCarListing();
@@ -43,9 +39,9 @@ class DataTablePanel extends React.Component {
   
       return (
         <div style={{ height: 500, width: '100%' }}>
-        <MUIDataTable title={"Employee List"}
-           data={data}
-           columns={columns}
+        <MUIDataTable title={title}
+           data={this.props.carData.cars}
+           columns={myColumns}
            options={options}
         />
       </div>);
@@ -61,9 +57,9 @@ const mapStateToProps = (state) => ({
   carData: state.data,
 })
 
-DataTablePanel = connect(
+CarDataTablePanel = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(DataTablePanel);
+)(CarDataTablePanel);
 
-export default DataTablePanel;
+export default CarDataTablePanel;

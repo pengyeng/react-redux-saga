@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import HomeLabel from "./HomeLabel";
 
 class Home extends Component {
   render() {
     return (
       <div>
-        
+        <HomeLabel customlabel={"Hello World"}/>
         <h2>HELLO</h2>
         <p>Cras facilisis urna ornare ex volutpat, et
         convallis erat elementum. Ut aliquam, ipsum vitae

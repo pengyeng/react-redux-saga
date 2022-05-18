@@ -18,7 +18,8 @@ import Home from "./Home";
 import {NewsMenuItem, NewsLink} from '../configurations/menulink-APP_MODE';
   const Weather = React.lazy(() => import('./Weather'));
   const DataGrid = React.lazy(() => import('./DataGrid'));
-  const DataTable = React.lazy(() => import('./DataTable'));
+  const CarData = React.lazy(() => import('./CarData'));
+  const PhoneData = React.lazy(() => import('./PhoneData'));
 
 function HomeLink(){
     return <Route path="/home" component={Home}/>;
@@ -29,10 +30,12 @@ function HomeLink(){
   function DataGridLink(){
     return <Route path="/datagrid" component={DataGrid}/>;
   }
-  function DataTableLink(){
-    return <Route path="/datatable" component={DataTable}/>;
+  function CarDataLink(){
+    return <Route path="/cardata" component={CarData}/>;
   }
-
+  function PhoneDataLink(){
+    return <Route path="/phonedata" component={PhoneData}/>;
+  }
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -81,14 +84,16 @@ export default function ButtonAppBar() {
         <MenuItem component={NavLink} to="/home" >Home</MenuItem>
         <MenuItem component={NavLink} to="/weather" >Weather</MenuItem>
         <MenuItem component={NavLink} to="/datagrid" >Data Grid</MenuItem>
-        <MenuItem component={NavLink} to="/datatable">Data Table</MenuItem>
+        <MenuItem component={NavLink} to="/cardata">Car Data</MenuItem>
+        <MenuItem component={NavLink} to="/phonedata">Phone Data</MenuItem>
         <NewsMenuItem/>
       </Menu>
       <React.Suspense fallback={<div>loading...</div>}> 
       <HomeLink/>
       <WeatherLink/>
       <DataGridLink/>
-      <DataTableLink/>
+      <CarDataLink/>
+      <PhoneDataLink/>
       <NewsLink/>
       </React.Suspense>  
       </HashRouter> 
