@@ -21,6 +21,7 @@ import {NewsMenuItem, NewsLink} from '../configurations/menulink-APP_MODE';
   const CarData = React.lazy(() => import('./CarData'));
   const PhoneData = React.lazy(() => import('./PhoneData'));
   const UIControl = React.lazy(() => import('./UIControl'));
+  const UIControlv5 = React.lazy(() => import('./UIControlv5'));
   
 
 
@@ -42,6 +43,10 @@ function HomeLink(){
   function UIControlLink(){
     return <Route path="/uicontrol" component={UIControl}/>;
   }
+  function UIControlv5Link(){
+    return <Route path="/uicontrolv5" component={UIControlv5}/>;
+  }
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -93,6 +98,7 @@ export default function ButtonAppBar() {
         <MenuItem component={NavLink} to="/cardata">Car Data</MenuItem>
         <MenuItem component={NavLink} to="/phonedata">Phone Data</MenuItem>
         <MenuItem component={NavLink} to="/uicontrol">UI Control</MenuItem>
+        <MenuItem component={NavLink} to="/uicontrolv5">UI Control v5</MenuItem>
         <NewsMenuItem/>
       </Menu>
       <React.Suspense fallback={<div>loading...</div>}> 
@@ -102,6 +108,7 @@ export default function ButtonAppBar() {
       <CarDataLink/>
       <PhoneDataLink/>
       <UIControlLink/>
+      <UIControlv5Link/>
       <NewsLink/>
       </React.Suspense>  
       </HashRouter> 
