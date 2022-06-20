@@ -62,7 +62,8 @@ export default function UIV4Showcase(){
         </td>
         <td>&nbsp;</td>
         <td>
-        <TextField label="Model"/><br></br>
+        <TextField label="Model"  multiline maxRows={7} margin="dense" /><br></br>
+        <TextField label="Model"  multiline maxRows={7}  /><br></br>
         </td>
         </tr>
         <tr>

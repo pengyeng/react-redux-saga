@@ -20,6 +20,7 @@ import {NewsMenuItem, NewsLink} from '../configurations/menulink-APP_MODE';
   const DataGrid = React.lazy(() => import('./DataGrid'));
   const CarData = React.lazy(() => import('./CarData'));
   const PhoneData = React.lazy(() => import('./PhoneData'));
+  const GenericData = React.lazy(() => import('./GenericData'));  
   const UIControl = React.lazy(() => import('./UIControl'));
   const UIControlv5 = React.lazy(() => import('./UIControlv5'));
   
@@ -39,6 +40,9 @@ function HomeLink(){
   }
   function PhoneDataLink(){
     return <Route path="/phonedata" component={PhoneData}/>;
+  }
+  function GenericDataLink(){
+    return <Route path="/genericdata/:module" component={GenericData}/>;
   }
   function UIControlLink(){
     return <Route path="/uicontrol" component={UIControl}/>;
@@ -97,6 +101,8 @@ export default function ButtonAppBar() {
         <MenuItem component={NavLink} to="/datagrid" >Data Grid</MenuItem>
         <MenuItem component={NavLink} to="/cardata">Car Data</MenuItem>
         <MenuItem component={NavLink} to="/phonedata">Phone Data</MenuItem>
+        <MenuItem component={NavLink} to="/genericdata/car">Generic Data - Car</MenuItem>
+        <MenuItem component={NavLink} to="/genericdata/phone">Generic Data - Phone</MenuItem>
         <MenuItem component={NavLink} to="/uicontrol">UI Control</MenuItem>
         <MenuItem component={NavLink} to="/uicontrolv5">UI Control v5</MenuItem>
         <NewsMenuItem/>
@@ -107,6 +113,7 @@ export default function ButtonAppBar() {
       <DataGridLink/>
       <CarDataLink/>
       <PhoneDataLink/>
+      <GenericDataLink/>
       <UIControlLink/>
       <UIControlv5Link/>
       <NewsLink/>

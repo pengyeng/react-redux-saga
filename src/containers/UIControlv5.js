@@ -45,7 +45,7 @@ export default function UIV5Showcase(){
   
     return(
       <div>
-      <Typography variant="h3" component="h4">UI Version 4 Showcase</Typography>
+      <Typography variant="h3" component="h4">UI Version 5 Showcase</Typography>
        
         <table>
           <tr>
@@ -64,7 +64,7 @@ export default function UIV5Showcase(){
           </td>
           <td>&nbsp;</td>
           <td>
-          <TextField label="Model"/><br></br>
+          <TextField label="Model"  multiline   maxRows={7} /><br></br>
           </td>
           </tr>
           <tr>
