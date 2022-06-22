@@ -1,0 +1,18 @@
+[{
+    "module":"car",
+    "title":"Car List",
+    "url": "https://1rhyxpw764.execute-api.eu-west-2.amazonaws.com/default/phone-listing?TableName=car-listing-SampleTable-199QJPY892AXB",
+    "createUrl": "https://1rhyxpw764.execute-api.eu-west-2.amazonaws.com/default/phone-listing",
+    "columns": ["id","Manufacturer", "Model", "Year", "Price"],
+    "structure": [{"label":"id"},{"label":"Manufacturer"},{"label":"Model"},{"label":"Year"},{"label":"Price"}],
+    "table": "car-listing-SampleTable-199QJPY892AXB"
+},{
+    "module":"phone",
+    "title":"Phone List",
+    "url": "https://1rhyxpw764.execute-api.eu-west-2.amazonaws.com/default/phone-listing?TableName=phone-listing",
+    "createUrl": "https://1rhyxpw764.execute-api.eu-west-2.amazonaws.com/default/phone-listing",
+    "columns": ["id","Manufacturer", "Model", "Capacity", "Price"],
+    "structure": [{"label":"id"},{"label":"Manufacturer"},{"label":"Model"},{"label":"Capacity"},{"label":"Price"}],
+    "table": "phone-listing"
+}
+]

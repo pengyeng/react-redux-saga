@@ -1,28 +1,15 @@
-import phoneReducer from "../phone/phoneReducer"
-import { phoneSaga } from "../phone/phoneSaga"
-import dataReducer from "../data/dataReducer"
-import { dataSaga } from "../data/dataSaga"
+import genericReducer from "../generic/genericReducer"
+import { genericSaga } from "../generic/genericSaga"
+
 
 export function getGenericModule(module)  {
     const myModule = module;
+    return {
+        id: "data",
+        reducerMap: {
+            data: genericReducer,
+        },
+        sagas: [genericSaga],
+    };
     
-    if (myModule.module == "car"){
-
-        return {
-            id: "data",
-            reducerMap: {
-                data: dataReducer,
-            },
-            sagas: [dataSaga],
-        };     
-           
-    }else{
-        return {
-            id: "phone",
-            reducerMap: {
-                data: phoneReducer,
-            },
-            sagas: [phoneSaga],
-        };
-    }
 }  
