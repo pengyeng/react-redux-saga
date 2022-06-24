@@ -17,6 +17,8 @@ function* fetchGenericListing(action) {
 function* submitGenericData(action) {
   console.log("Saga call submitGenericData ");
   console.log(action);
+  var module = action.module;
+  var url = action.url;
   const json = yield fetch(action.createUrl,{
     method: 'POST',
     headers: {
@@ -26,5 +28,5 @@ function* submitGenericData(action) {
     body: JSON.stringify(action.payLoad)
   })
       .then(response => response.json());
-    yield put({ type: "GENERIC_DATA_CREATED", json: json });
+    yield put({ type: "GET_GENERIC_LISTING", module, url });
 }

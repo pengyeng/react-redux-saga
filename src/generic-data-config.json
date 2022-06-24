@@ -1,18 +1,20 @@
 [{
     "module":"car",
     "title":"Car List",
+    "formtitle":"Create Car Record",
     "url": "https://1rhyxpw764.execute-api.eu-west-2.amazonaws.com/default/phone-listing?TableName=car-listing-SampleTable-199QJPY892AXB",
     "createUrl": "https://1rhyxpw764.execute-api.eu-west-2.amazonaws.com/default/phone-listing",
-    "columns": ["id","Manufacturer", "Model", "Year", "Price"],
-    "structure": [{"label":"id"},{"label":"Manufacturer"},{"label":"Model"},{"label":"Year"},{"label":"Price"}],
+    "columns": ["Manufacturer", "Model", "Year", "Price"],
+    "structure": [{"label":"id","type":"N","fieldlength":3},{"label":"Manufacturer","type":"S","fieldlength":20},{"label":"Model","type":"S","fieldlength":20},{"label":"Year","type":"N","fieldlength":4},{"label":"Price","type":"N","fieldlength":6}],
     "table": "car-listing-SampleTable-199QJPY892AXB"
 },{
     "module":"phone",
     "title":"Phone List",
+    "formtitle":"Create Phone Record",
     "url": "https://1rhyxpw764.execute-api.eu-west-2.amazonaws.com/default/phone-listing?TableName=phone-listing",
     "createUrl": "https://1rhyxpw764.execute-api.eu-west-2.amazonaws.com/default/phone-listing",
-    "columns": ["id","Manufacturer", "Model", "Capacity", "Price"],
-    "structure": [{"label":"id"},{"label":"Manufacturer"},{"label":"Model"},{"label":"Capacity"},{"label":"Price"}],
+    "columns": ["Manufacturer", "Model", "Capacity", "Price"],
+    "structure": [{"label":"id","type":"N","fieldlength":3},{"label":"Manufacturer","type":"S","fieldlength":10},{"label":"Model","type":"S","fieldlength":10},{"label":"Capacity","type":"N","fieldlength":3},{"label":"Price","type":"N","fieldlength":4}],
     "table": "phone-listing"
 }
 ]

@@ -3,6 +3,6 @@ export const getGenericListing = (module,url) => ({
   });
 
 
-  export const submitGenericData = (module,createUrl,payLoad) => ({
-    type: 'SUBMIT_GENERIC_DATA',module,createUrl,payLoad
+  export const submitGenericData = (module,createUrl,url,payLoad) => ({
+    type: 'SUBMIT_GENERIC_DATA',module,createUrl,url,payLoad
   });  
